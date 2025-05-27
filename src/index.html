@@ -246,7 +246,10 @@
               <p class="video__time">1:25 минут</p>
             </div>
             <div class="video__line"></div>
-            <button class="video__button">
+            <button
+              class="video__button"
+              data-fullscreen-video-url="https://api.5-ve.ru/upload/video/Mantera_promo_768.mp4"
+            >
               <span class="play play--white video__play">
                 <svg
                   class="play__icon"
@@ -272,6 +275,11 @@
       </div>
     </section>
     <!-- endregion -->
+
+    <div id="video-modal" class="video-modal">
+      <button id="video-modal-close" class="video-modal__close">×</button>
+      <video id="fullscreen-video" controls></video>
+    </div>
 
     <script src="./assets/scripts/index.js"></script>
   </body>

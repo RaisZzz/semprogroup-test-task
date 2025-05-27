@@ -13,6 +13,47 @@ const closePopup = (popup) => {
   setTimeout(() => popup.classList.remove('popup--active'), transitionDuration);
 };
 
+const openElementFullscreen = async (element) => {
+  if (!element) return;
+
+  try {
+    if (element.requestFullscreen) {
+      await element.requestFullscreen();
+    } else if (element.webkitRequestFullscreen) {
+      await element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) {
+      await element.msRequestFullscreen();
+    }
+  } catch (e) {
+    console.error('Failed to open fullscreen', e);
+  }
+};
+
+const closeFullscreen = async () => {
+  // End video
+  const video = document.getElementById('fullscreen-video');
+  const videoModal = document.getElementById('video-modal');
+
+  if (video) video.pause();
+  if (videoModal) videoModal.classList.remove('video-modal--active');
+
+  try {
+    if (document.fullscreenElement) {
+      if (document.exitFullscreen) {
+        await document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        await document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) {
+        await document.msExitFullscreen();
+      }
+    }
+  } catch (e) {
+    console.error('Failed to close fullscreen', e);
+  }
+
+  if (video) video.src = '';
+};
+
 const initNameInputMask = () => {
   const nameInputs = document.querySelectorAll('[data-name-mask]');
   for (const input of nameInputs) {
@@ -152,6 +193,41 @@ const initCallbackForm = () => {
   });
 };
 
+const initFullscreenVideoButtons = () => {
+  const videoModal = document.getElementById('video-modal');
+  const video = document.getElementById('fullscreen-video');
+  if (!videoModal || !video) return;
+
+  // Init modal close button
+  const videoModalClose = document.getElementById('video-modal-close');
+  if (videoModalClose) {
+    videoModalClose.addEventListener('click', async () => {
+      await closeFullscreen();
+    });
+  }
+
+  // Init fullscreen buttons
+  const fullscreenButtons = document.querySelectorAll(
+    '[data-fullscreen-video-url]'
+  );
+  for (const button of fullscreenButtons) {
+    const url = button.dataset.fullscreenVideoUrl;
+    if (!url) continue;
+
+    button.addEventListener('click', async () => {
+      video.src = url;
+      videoModal.classList.add('video-modal--active');
+      await openElementFullscreen(videoModal);
+      video.play();
+    });
+  }
+
+  // Init fullscreen change listener
+  document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement) closeFullscreen();
+  });
+};
+
 const onDOMLoaded = () => {
   try {
     initAutoScrollTexts();
@@ -175,6 +251,12 @@ const onDOMLoaded = () => {
     initCallbackForm();
   } catch (e) {
     console.error('Failed to initialize callback form', e);
+  }
+
+  try {
+    initFullscreenVideoButtons();
+  } catch (e) {
+    console.error('Failed to initialize fullscreen video buttons', e);
   }
 };
 
