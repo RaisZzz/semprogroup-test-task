@@ -80,6 +80,14 @@ body {
   outline: none;
   border: none;
   cursor: pointer;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+}
+
+.button:hover {
+  background-color: var(--on-accent-color);
+  color: var(--accent-color);
 }
 
 .button__text {
@@ -384,6 +392,11 @@ body {
   display: flex;
   align-items: center;
   gap: 40px;
+}
+
+.header__button:hover {
+  background-color: var(--accent-color);
+  color: var(--on-accent-color);
 }
 
 .header__logo {
