@@ -59,6 +59,16 @@ const initPopups = () => {
 
     trigger.addEventListener('click', () => openPopup(popup));
   }
+
+  // Add escape listener
+  document.addEventListener('keydown', (e) => {
+    if (e.code !== 'Escape') return;
+
+    const openedPopup = document.querySelector('.popup');
+    if (!openedPopup) return;
+
+    closePopup(openedPopup);
+  });
 };
 
 const onDOMLoaded = () => {
