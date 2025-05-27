@@ -29,6 +29,12 @@ body {
   color: var(--text-color);
 }
 
+.scroll-contents {
+  width: 100vw;
+  height: 100dvh;
+  overflow: auto;
+}
+
 /* endregion */
 
 /* region Auto scroll text*/
@@ -194,6 +200,11 @@ body {
   text-transform: uppercase;
   font-size: 14px;
   line-height: 1;
+}
+
+.play__icon {
+  width: 10px;
+  height: auto;
 }
 
 .play--white {
@@ -495,6 +506,7 @@ body {
 
 .about__picture-wrapper {
   position: relative;
+  width: 100%;
 }
 
 .about__picture-plug {
@@ -617,8 +629,137 @@ body {
 
 /* endregion */
 
-.scroll-contents {
-  width: 100vw;
-  height: 100dvh;
-  overflow: auto;
+/* region Responsive */
+
+@media (min-width: 1770px) {
+  /* region UI */
+
+  .menu-btn {
+    font-size: 15px;
+    gap: 15px;
+  }
+
+  .menu-btn__icon {
+    width: 38px;
+    height: 18px;
+  }
+
+  .button {
+    font-size: 15px;
+    padding: 17px 26px;
+    gap: 12px;
+  }
+
+  .button__icon {
+    width: 14px;
+  }
+
+  .phone-link {
+    font-size: 17px;
+  }
+
+  .callback-button {
+    font-size: 15px;
+  }
+
+  .video__button {
+    width: 240px;
+    min-width: 240px;
+    height: 240px;
+  }
+
+  .video__label {
+    font-size: 18px;
+  }
+
+  .video__time {
+    font-size: 18px;
+  }
+
+  .play {
+    gap: 7px;
+    font-size: 18px;
+  }
+
+  .play__icon {
+    width: 13px;
+  }
+
+  /* endregion */
+
+  /* region Header */
+
+  .header__left,
+  .header__right {
+    gap: 45px;
+  }
+
+  /* endregion */
+
+  /* region Banner */
+
+  .banner__img {
+    aspect-ratio: 2.9;
+    object-position: center left;
+  }
+
+  .banner__row {
+    margin-top: 50px;
+  }
+
+  .banner__title {
+    font-size: 31px;
+  }
+
+  .banner__logo {
+    width: 862px;
+  }
+
+  /* endregion */
+
+  /* region About */
+
+  .about {
+    margin-top: 160px;
+    margin-bottom: 80px;
+  }
+
+  .about__label {
+    font-size: 17px;
+    margin-bottom: 35px;
+  }
+
+  .about__picture-plug {
+    width: 260px;
+    height: 260px;
+    top: 115px;
+  }
+
+  .about__picture-icon {
+    width: 63px;
+  }
+
+  .about__right:before {
+    width: 63px;
+    height: 12px;
+    top: -65px;
+  }
+
+  .about__title {
+    font-size: 34px;
+    margin-bottom: 120px;
+  }
+
+  .about__description {
+    font-size: 20px;
+    margin-bottom: 100px;
+  }
+
+  .about__video {
+    gap: 20px;
+  }
+
+  /* endregion */
 }
+
+/*endregion*/
