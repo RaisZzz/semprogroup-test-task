@@ -284,9 +284,22 @@
     <!-- Smooth scroll bar -->
     <script src="https://unpkg.com/smooth-scrollbar@8.8.4/dist/smooth-scrollbar.js"></script>
     <script>
+      class ModalPlugin extends Scrollbar.ScrollbarPlugin {
+        static pluginName = 'modal';
+
+        static defaultOptions = {
+          open: false,
+        };
+
+        transformDelta(delta) {
+          return this.options.open ? { x: 0, y: 0 } : delta;
+        }
+      }
+
       document.addEventListener('DOMContentLoaded', () => {
         const scrollContent = document.getElementById('scroll-content');
-        const scrollbar = Scrollbar.init(scrollContent, {
+        Scrollbar.use(ModalPlugin);
+        window.scrollbar = Scrollbar.init(scrollContent, {
           damping: 0.1,
           thumbMinSize: 20,
           renderByPixels: true,
@@ -296,11 +309,18 @@
         });
 
         const header = document.getElementById('header');
-        if (header) {
-          scrollbar.addListener(({ offset }) => {
-            header.style.transform = `translate(${offset.x}px, ${offset.y}px)`;
-          });
-        }
+        const popups = document.querySelectorAll('.popup');
+
+        window.scrollbar.addListener(({ offset }) => {
+          const transform = `translate(${offset.x}px, ${offset.y}px)`;
+          if (header) {
+            header.style.transform = transform;
+          }
+
+          for (const popup of popups) {
+            popup.style.transform = transform;
+          }
+        });
       });
     </script>
 

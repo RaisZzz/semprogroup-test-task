@@ -1,12 +1,28 @@
 // region Popups
 const openPopup = (popup) => {
   if (!popup) return;
+
+  try {
+    window.scrollbar.updatePluginOptions('modal', { open: true });
+    // eslint-disable-next-line no-unused-vars
+  } catch (e) {
+    /* empty */
+  }
+
   popup.classList.add('popup--active');
   requestAnimationFrame(() => popup.classList.add('popup--showed'));
 };
 
 const closePopup = (popup) => {
   if (!popup) return;
+
+  try {
+    window.scrollbar.updatePluginOptions('modal', { open: false });
+    // eslint-disable-next-line no-unused-vars
+  } catch (e) {
+    /* empty */
+  }
+
   popup.classList.remove('popup--showed');
 
   const transitionDuration =

@@ -229,7 +229,7 @@ body {
   overflow-y: auto;
   display: none;
   opacity: 0;
-  transition: 0.3s;
+  transition: opacity 0.3s;
 }
 
 .popup--active {
