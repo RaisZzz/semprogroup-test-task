@@ -128,6 +128,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  background-color: var(--background-color);
 }
 
 .header .container {
@@ -204,6 +205,46 @@ body {
 
 .callback-button:hover:after {
   width: 100%;
+}
+
+/* endregion */
+
+/* region Banner */
+
+.banner {
+  padding-top: 103px;
+  min-height: 100vh;
+  user-select: none;
+  pointer-events: none;
+}
+
+.banner__img {
+  width: 100%;
+  aspect-ratio: 2.7;
+  object-fit: cover;
+  object-position: center right;
+  user-select: none;
+  pointer-events: none;
+}
+
+.banner__row {
+  display: flex;
+  width: 100%;
+  margin-top: 40px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.banner__title {
+  color: var(--accent-color);
+  text-transform: uppercase;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.banner__logo {
+  width: 717px;
+  height: auto;
 }
 
 /* endregion */

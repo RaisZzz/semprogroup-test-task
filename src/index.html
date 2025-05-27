@@ -65,6 +65,47 @@
     </header>
     <!-- endregion -->
 
+    <!-- region Banner -->
+    <section class="banner">
+      <div class="container">
+        <picture class="banner__picture">
+          <source
+            media="(min-width: 1770px)"
+            srcset="./assets/images/banner/banner-1920.webp"
+          />
+          <source
+            media="(min-width: 1281px)"
+            srcset="./assets/images/banner/banner-1440.webp"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="./assets/images/banner/banner-1024.webp"
+          />
+          <source
+            media="(min-width: 360px)"
+            srcset="./assets/images/banner/banner-768.webp"
+          />
+          <img
+            src="./assets/images/banner/banner-360.webp"
+            alt="Дом бизнес класса"
+            class="banner__img"
+            loading="lazy"
+          />
+        </picture>
+        <div class="banner__row">
+          <h3 class="banner__title">
+            Дом бизнес-класса<br />Для ценителей роскоши
+          </h3>
+          <img
+            class="banner__logo"
+            src="./assets/images/logo-black.svg"
+            alt="Inchapin"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- endregion -->
+
     <script src="./assets/scripts/index.js"></script>
   </body>
 </html>
