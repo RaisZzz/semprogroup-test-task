@@ -11,6 +11,62 @@
     <link rel="stylesheet" href="./assets/styles/main.css" />
   </head>
   <body>
+    <!-- region Callback popup -->
+    <div id="callback-popup" class="popup">
+      <button class="close popup__close" data-close-popup="callback-popup">
+        <span class="close__line"></span>
+        <span class="close__line"></span>
+      </button>
+      <form id="callback-form" class="callback__form">
+        <p class="callback__title">Заказать звонок</p>
+        <div class="callback__fields">
+          <div class="input__wrapper">
+            <label class="input__label" for="callback-name">Ваше имя</label>
+            <input
+              id="callback-name"
+              class="input"
+              type="text"
+              name="name"
+              placeholder="Ваше имя"
+            />
+          </div>
+          <div class="input__wrapper">
+            <label class="input__label" for="callback-phone">Телефон</label>
+            <input
+              id="callback-phone"
+              class="input"
+              type="text"
+              name="phone"
+              placeholder="Телефон"
+            />
+          </div>
+          <div class="input__wrapper">
+            <label class="input__label" for="callback-email">E-mail</label>
+            <input
+              id="callback-email"
+              class="input"
+              type="text"
+              name="e-mail"
+              placeholder="E-mail"
+            />
+          </div>
+        </div>
+        <p class="callback__policy">
+          Нажимая на кнопку «Отправить», вы ознакомлены и подтверждаете согласие
+          с
+          <a class="callback__policy-link" href="#" target="_blank">
+            политикой обработки персональных данных
+          </a>
+        </p>
+        <input
+          class="button callback__submit"
+          type="submit"
+          value="Отправить"
+        />
+      </form>
+    </div>
+    <!-- endregion -->
+
     <!-- region Header -->
     <header class="header">
       <div class="container">
@@ -59,7 +115,9 @@
         </div>
         <div class="header__right">
           <a href="tel:+74955272121" class="phone-link">+7 495 527 21 21</a>
-          <button class="callback-button">Заказать звонок</button>
+          <button class="callback-button" data-popup-id="callback-popup">
+            Заказать звонок
+          </button>
         </div>
       </div>
     </header>

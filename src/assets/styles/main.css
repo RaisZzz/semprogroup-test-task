@@ -68,7 +68,11 @@ body {
   border-radius: 100px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
 .button__text {
@@ -207,6 +211,99 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  padding: 60px;
+  z-index: 9;
+  background-color: var(--background-color);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  display: none;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.popup--active {
+  display: flex;
+}
+
+.popup--showed {
+  opacity: 1;
+}
+
+.input__wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  font-size: 16px;
+  outline: none;
+  border: solid rgba(0, 0, 0, 0.2);
+  border-width: 0 0 1px 0;
+  padding: 6px 0;
+  width: 100%;
+}
+
+.input::placeholder {
+  opacity: 0;
+}
+
+.input__label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-transform: uppercase;
+  font-size: 16px;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.close {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.close__line {
+  position: absolute;
+  width: 36px;
+  height: 1px;
+  background-color: #000000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: 0.3s;
+}
+
+.close__line:last-child {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.close:hover .close__line {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.close:hover .close__line:last-child {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.popup__close {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  z-index: 3;
 }
 
 /* endregion */
@@ -440,6 +537,54 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 15px;
+}
+
+/* endregion */
+
+/* region Callback Form */
+
+.callback__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 454px;
+}
+
+.callback__title {
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.callback__fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.callback__policy {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #000;
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+.callback__policy-link {
+  color: #000;
+}
+
+.callback__policy-link:hover {
+  text-decoration: none;
+}
+
+.callback__submit {
+  padding: 23px;
+  width: 228px;
+  max-width: 100%;
 }
 
 /* endregion */
