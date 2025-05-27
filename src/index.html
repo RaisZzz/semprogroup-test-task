@@ -21,34 +21,40 @@
         <p class="callback__title">Заказать звонок</p>
         <div class="callback__fields">
           <div class="input__wrapper">
-            <label class="input__label" for="callback-name">Ваше имя</label>
             <input
               id="callback-name"
               class="input"
               type="text"
               name="name"
               placeholder="Ваше имя"
+              autocomplete="one"
+              data-name-mask
             />
+            <label class="input__label" for="callback-name">Ваше имя</label>
           </div>
           <div class="input__wrapper">
-            <label class="input__label" for="callback-phone">Телефон</label>
             <input
               id="callback-phone"
               class="input"
               type="text"
-              name="phone"
+              name="number"
               placeholder="Телефон"
+              autocomplete
+              data-phone-mask
             />
+            <label class="input__label" for="callback-phone">Телефон</label>
           </div>
           <div class="input__wrapper">
-            <label class="input__label" for="callback-email">E-mail</label>
             <input
               id="callback-email"
               class="input"
               type="text"
               name="e-mail"
               placeholder="E-mail"
+              autocomplete
+              data-email-mask
             />
+            <label class="input__label" for="callback-email">E-mail</label>
           </div>
         </div>
         <p class="callback__policy">
@@ -115,8 +121,13 @@
         </div>
         <div class="header__right">
           <a href="tel:+74955272121" class="phone-link">+7 495 527 21 21</a>
-          <button class="callback-button" data-popup-id="callback-popup">
-            Заказать звонок
+          <button
+            class="callback-button auto-scroll-text-trigger"
+            data-popup-id="callback-popup"
+          >
+            <span class="auto-scroll-text-container">
+              <span class="auto-scroll-text">Заказать звонок</span>
+            </span>
           </button>
         </div>
       </div>
