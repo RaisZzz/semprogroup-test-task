@@ -112,7 +112,7 @@ body {
   width: 100%;
   height: 2px;
   background-color: var(--accent-color);
-  transition: 0.3s;
+  transition: transform 0.3s;
 }
 
 .menu-btn:hover .menu-btn__line:first-child {
@@ -383,7 +383,7 @@ body {
 }
 
 .header__logo-link {
-  transition: 0.3s;
+  transition: transform 0.3s;
   line-height: 0;
   cursor: pointer;
 }
@@ -408,7 +408,7 @@ body {
 .phone-link {
   color: var(--text-color);
   text-decoration: none;
-  transition: 0.3s;
+  transition: color 0.3s;
   font-size: 14px;
   font-weight: 600;
 }
@@ -616,3 +616,9 @@ body {
 }
 
 /* endregion */
+
+.scroll-contents {
+  width: 100vw;
+  height: 100dvh;
+  overflow: auto;
+}

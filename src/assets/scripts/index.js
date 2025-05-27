@@ -1,3 +1,4 @@
+// region Popups
 const openPopup = (popup) => {
   if (!popup) return;
   popup.classList.add('popup--active');
@@ -12,6 +13,44 @@ const closePopup = (popup) => {
     parseFloat(getComputedStyle(popup).transitionDuration) * 1000 || 300;
   setTimeout(() => popup.classList.remove('popup--active'), transitionDuration);
 };
+
+const initPopups = () => {
+  // Init popup close buttons
+  const closeButtons = document.querySelectorAll('[data-close-popup]');
+  for (const close of closeButtons) {
+    close.addEventListener('click', () => {
+      const popupId = close.dataset.closePopup;
+      const popup = document.getElementById(popupId);
+      if (!popup) return;
+
+      closePopup(popup);
+    });
+  }
+
+  // Init popup triggers
+  const popupTriggers = document.querySelectorAll('[data-popup-id]');
+  for (const trigger of popupTriggers) {
+    const popupId = trigger.dataset.popupId;
+    const popup = document.getElementById(popupId);
+    if (!popup) return;
+
+    trigger.addEventListener('click', () => openPopup(popup));
+  }
+
+  // Add escape listener
+  document.addEventListener('keydown', (e) => {
+    if (e.code !== 'Escape') return;
+
+    const openedPopup = document.querySelector('.popup');
+    if (!openedPopup) return;
+
+    closePopup(openedPopup);
+  });
+};
+
+// endregion
+
+// region Fullscreen
 
 const openElementFullscreen = async (element) => {
   if (!element) return;
@@ -53,6 +92,45 @@ const closeFullscreen = async () => {
 
   if (video) video.src = '';
 };
+
+const initFullscreenVideoButtons = () => {
+  const videoModal = document.getElementById('video-modal');
+  const video = document.getElementById('fullscreen-video');
+  if (!videoModal || !video) return;
+
+  // Init modal close button
+  const videoModalClose = document.getElementById('video-modal-close');
+  if (videoModalClose) {
+    videoModalClose.addEventListener('click', async () => {
+      await closeFullscreen();
+    });
+  }
+
+  // Init fullscreen buttons
+  const fullscreenButtons = document.querySelectorAll(
+    '[data-fullscreen-video-url]'
+  );
+  for (const button of fullscreenButtons) {
+    const url = button.dataset.fullscreenVideoUrl;
+    if (!url) continue;
+
+    button.addEventListener('click', async () => {
+      video.src = url;
+      videoModal.classList.add('video-modal--active');
+      await openElementFullscreen(videoModal);
+      video.play();
+    });
+  }
+
+  // Init fullscreen change listener
+  document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement) closeFullscreen();
+  });
+};
+
+// endregion
+
+// region Input masks
 
 const initNameInputMask = () => {
   const nameInputs = document.querySelectorAll('[data-name-mask]');
@@ -111,39 +189,13 @@ const initEmailInputMask = () => {
   }
 };
 
-const initPopups = () => {
-  // Init popup close buttons
-  const closeButtons = document.querySelectorAll('[data-close-popup]');
-  for (const close of closeButtons) {
-    close.addEventListener('click', () => {
-      const popupId = close.dataset.closePopup;
-      const popup = document.getElementById(popupId);
-      if (!popup) return;
-
-      closePopup(popup);
-    });
-  }
-
-  // Init popup triggers
-  const popupTriggers = document.querySelectorAll('[data-popup-id]');
-  for (const trigger of popupTriggers) {
-    const popupId = trigger.dataset.popupId;
-    const popup = document.getElementById(popupId);
-    if (!popup) return;
-
-    trigger.addEventListener('click', () => openPopup(popup));
-  }
-
-  // Add escape listener
-  document.addEventListener('keydown', (e) => {
-    if (e.code !== 'Escape') return;
-
-    const openedPopup = document.querySelector('.popup');
-    if (!openedPopup) return;
-
-    closePopup(openedPopup);
-  });
+const initInputMasks = () => {
+  initNameInputMask();
+  initPhoneInputMask();
+  initEmailInputMask();
 };
+
+// endregion
 
 const initAutoScrollTexts = () => {
   const triggers = document.querySelectorAll('.auto-scroll-text-trigger');
@@ -169,12 +221,6 @@ const initAutoScrollTexts = () => {
   }
 };
 
-const initInputMasks = () => {
-  initNameInputMask();
-  initPhoneInputMask();
-  initEmailInputMask();
-};
-
 const initCallbackForm = () => {
   const callbackForm = document.getElementById('callback-form');
   if (!callbackForm) return;
@@ -190,41 +236,6 @@ const initCallbackForm = () => {
     const email = emailInput?.value ?? '';
 
     console.log(name, phone, email);
-  });
-};
-
-const initFullscreenVideoButtons = () => {
-  const videoModal = document.getElementById('video-modal');
-  const video = document.getElementById('fullscreen-video');
-  if (!videoModal || !video) return;
-
-  // Init modal close button
-  const videoModalClose = document.getElementById('video-modal-close');
-  if (videoModalClose) {
-    videoModalClose.addEventListener('click', async () => {
-      await closeFullscreen();
-    });
-  }
-
-  // Init fullscreen buttons
-  const fullscreenButtons = document.querySelectorAll(
-    '[data-fullscreen-video-url]'
-  );
-  for (const button of fullscreenButtons) {
-    const url = button.dataset.fullscreenVideoUrl;
-    if (!url) continue;
-
-    button.addEventListener('click', async () => {
-      video.src = url;
-      videoModal.classList.add('video-modal--active');
-      await openElementFullscreen(videoModal);
-      video.play();
-    });
-  }
-
-  // Init fullscreen change listener
-  document.addEventListener('fullscreenchange', () => {
-    if (!document.fullscreenElement) closeFullscreen();
   });
 };
 

@@ -11,276 +11,300 @@
     <link rel="stylesheet" href="./assets/styles/main.css" />
   </head>
   <body>
-    <!-- region Callback popup -->
-    <div id="callback-popup" class="popup">
-      <button class="close popup__close" data-close-popup="callback-popup">
-        <span class="close__line"></span>
-        <span class="close__line"></span>
-      </button>
-      <form id="callback-form" class="callback__form">
-        <p class="callback__title">Заказать звонок</p>
-        <div class="callback__fields">
-          <div class="input__wrapper">
-            <input
-              id="callback-name"
-              class="input"
-              type="text"
-              name="name"
-              placeholder="Ваше имя"
-              autocomplete="one"
-              data-name-mask
-            />
-            <label class="input__label" for="callback-name">Ваше имя</label>
-          </div>
-          <div class="input__wrapper">
-            <input
-              id="callback-phone"
-              class="input"
-              type="text"
-              name="number"
-              placeholder="Телефон"
-              autocomplete
-              data-phone-mask
-            />
-            <label class="input__label" for="callback-phone">Телефон</label>
-          </div>
-          <div class="input__wrapper">
-            <input
-              id="callback-email"
-              class="input"
-              type="text"
-              name="e-mail"
-              placeholder="E-mail"
-              autocomplete
-              data-email-mask
-            />
-            <label class="input__label" for="callback-email">E-mail</label>
-          </div>
-        </div>
-        <p class="callback__policy">
-          Нажимая на кнопку «Отправить», вы ознакомлены и подтверждаете согласие
-          с
-          <a class="callback__policy-link" href="#" target="_blank">
-            политикой обработки персональных данных
-          </a>
-        </p>
-        <input
-          class="button callback__submit"
-          type="submit"
-          value="Отправить"
-        />
-      </form>
-    </div>
-    <!-- endregion -->
-
-    <!-- region Header -->
-    <header class="header">
-      <div class="container">
-        <div class="header__left">
-          <button class="menu-btn">
-            <span class="menu-btn__icon">
-              <span class="menu-btn__line"></span>
-              <span class="menu-btn__line"></span>
-              <span class="menu-btn__line"></span>
-            </span>
-            Меню
-          </button>
-          <button class="button header__button auto-scroll-text-trigger">
-            <span class="auto-scroll-text-container">
-              <span class="auto-scroll-text">Выбрать квартиру</span>
-            </span>
-            <svg class="button__icon" width="12" height="7" fill="none">
-              <path
-                d="M11.223.865a.41.41 0 0 1 .076.229c0 .101-.026.152-.076.203L5.916 6.629a.41.41 0 0 1-.229.076c-.101 0-.152-.025-.203-.076L.152 1.297c-.05-.05-.076-.102-.076-.203A.41.41 0 0 1 .152.865L.66.357C.71.307.762.281.863.281a.41.41 0 0 1 .229.076l4.595 4.596L10.284.357c.051-.05.127-.076.229-.076.076 0 .152.026.203.076l.508.508z"
-                fill="currentColor"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="header__logo">
-          <a class="header__logo-link" href="#">
-            <svg
-              class="header__logo-icon"
-              width="187"
-              height="30"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#a)">
-                <mask id="b" x="0" y="0" width="187" height="30">
-                  <path d="M187 0H0v30h187V0z" fill="#fff" />
-                </mask>
-                <g mask="url(#b)" fill="currentColor">
-                  <path
-                    d="M119.405 0c.315 0 .595.294.595.624v2.752c0 .33-.28.624-.595.624h-19.81C99.28 4 99 3.706 99 3.376V.624c0-.33.28-.624.596-.624h19.809zM59.897 24.255a.568.568 0 0 0-.774 0c-1.308 1.03-2.89 1.74-4.767 1.74-3.992 0-6.968-3.244-6.968-7.063 0-3.852 2.96-7.113 6.934-7.113 1.738 0 3.493.676 4.8 1.808.242.236.569.236.775 0L61.79 11.7c.24-.236.24-.608-.035-.861C59.64 8.98 57.368 8 54.22 8 48.007 8 43 12.917 43 19.034 43 25.134 48.007 30 54.236 30c2.77 0 5.455-.946 7.571-2.957.224-.22.275-.608.035-.828l-1.945-1.96zM90.39 8h-2.975a.595.595 0 0 0-.61.591v8.33H76.23v-8.33A.595.595 0 0 0 75.62 8h-3.01c-.323 0-.61.278-.61.591V29.41c0 .313.287.591.61.591h3.01c.36 0 .61-.278.61-.591V20.73h10.576v8.679c0 .313.25.591.61.591h2.975c.322 0 .609-.278.609-.591V8.59c0-.313-.287-.591-.61-.591zM110.267 8.343c-.087-.189-.227-.343-.54-.343h-.314c-.279 0-.436.154-.54.343l-9.81 20.852c-.191.41.07.805.54.805h2.736c.505 0 .784-.308.906-.617l6.185-13.604h.087l6.238 13.604c.227.428.436.617.906.617h2.736c.47 0 .731-.411.54-.805l-9.67-20.852zM135.978 8h-7.387a.586.586 0 0 0-.591.591V29.41c0 .313.243.591.591.591h2.885a.61.61 0 0 0 .591-.591v-7.392h3.928c3.842 0 7.005-3.182 7.005-7.078.017-3.791-3.163-6.939-7.022-6.939zm-.261 10.191h-3.65v-6.33h3.65c1.756 0 3.233 1.322 3.233 3.043 0 1.861-1.477 3.287-3.233 3.287zM155.423 8h-2.847c-.305 0-.576.278-.576.591V29.41c0 .313.271.591.576.591h2.847c.305 0 .576-.278.576-.591V8.59c.017-.313-.271-.591-.576-.591zM186.36 8h-2.95a.59.59 0 0 0-.605.586v12.868h-.035l-10.575-10.887-2.098-2.17a1.337 1.337 0 0 0-.959-.397h-.534a.59.59 0 0 0-.604.586v20.62a.59.59 0 0 0 .604.586h2.933a.59.59 0 0 0 .604-.586V15.821h.036l.035.034 12.904 13.73s.391.414.746.414c.516 0 1.138.052 1.138-.569V8.586a.647.647 0 0 0-.64-.586zM3.423 8H.576C.271 8 0 8.278 0 8.591V29.41c0 .313.271.591.576.591h2.847c.305 0 .576-.278.576-.591V8.59C4.016 8.278 3.728 8 3.423 8zM34.36 8h-2.95a.59.59 0 0 0-.605.586v12.868h-.035L20.195 10.567l-2.098-2.17A1.337 1.337 0 0 0 17.138 8h-.534a.59.59 0 0 0-.604.586v20.62a.59.59 0 0 0 .604.586h2.933a.59.59 0 0 0 .604-.586V15.821h.036l.035.034 12.904 13.73s.391.414.746.414c.516 0 1.138.052 1.138-.569V8.586A.647.647 0 0 0 34.36 8z"
-                  />
-                </g>
-              </g>
-            </svg>
-          </a>
-        </div>
-        <div class="header__right">
-          <a href="tel:+74955272121" class="phone-link">+7 495 527 21 21</a>
-          <button
-            class="callback-button auto-scroll-text-trigger"
-            data-popup-id="callback-popup"
-          >
-            <span class="auto-scroll-text-container">
-              <span class="auto-scroll-text">Заказать звонок</span>
-            </span>
-          </button>
-        </div>
-      </div>
-    </header>
-    <!-- endregion -->
-
-    <!-- region Banner -->
-    <section class="banner">
-      <div class="container">
-        <picture class="banner__picture">
-          <source
-            media="(min-width: 1770px)"
-            srcset="./assets/images/banner/banner-1920.webp"
-          />
-          <source
-            media="(min-width: 1281px)"
-            srcset="./assets/images/banner/banner-1440.webp"
-          />
-          <source
-            media="(min-width: 768px)"
-            srcset="./assets/images/banner/banner-1024.webp"
-          />
-          <source
-            media="(min-width: 360px)"
-            srcset="./assets/images/banner/banner-768.webp"
-          />
-          <img
-            src="./assets/images/banner/banner-360.webp"
-            alt="Дом бизнес класса"
-            class="banner__img"
-            loading="lazy"
-          />
-        </picture>
-        <div class="banner__row">
-          <h3 class="banner__title">
-            Дом бизнес-класса
-            <br />
-            Для ценителей роскоши
-          </h3>
-          <img
-            class="banner__logo"
-            src="./assets/images/logo-black.svg"
-            alt="Inchapin"
-          />
-        </div>
-      </div>
-    </section>
-    <!-- endregion -->
-
-    <!-- region About -->
-    <section class="about">
-      <div class="container">
-        <div class="about__left">
-          <p class="about__label">О проекте</p>
-          <div class="about__picture-wrapper">
-            <div class="about__picture-plug">
-              <svg
-                class="about__picture-icon"
-                width="49"
-                height="68"
-                viewBox="0 0 49 68"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+    <div id="scroll-content" class="scroll-contents">
+      <!-- region Header -->
+      <header id="header" class="header">
+        <div class="container">
+          <div class="header__left">
+            <button class="menu-btn">
+              <span class="menu-btn__icon">
+                <span class="menu-btn__line"></span>
+                <span class="menu-btn__line"></span>
+                <span class="menu-btn__line"></span>
+              </span>
+              Меню
+            </button>
+            <button class="button header__button auto-scroll-text-trigger">
+              <span class="auto-scroll-text-container">
+                <span class="auto-scroll-text">Выбрать квартиру</span>
+              </span>
+              <svg class="button__icon" width="12" height="7" fill="none">
                 <path
-                  d="M47.6105 0C48.3461 0 49 0.623853 49 1.32569V7.17431C49 7.87615 48.3461 8.5 47.6105 8.5H1.38949C0.653876 8.5 0 7.87615 0 7.17431V1.32569C0 0.623853 0.653876 0 1.38949 0H47.6105Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M26.2888 18.5551C26.0855 18.1248 25.7603 17.7727 25.0285 17.7727H24.2967C23.6463 17.7727 23.2804 18.1248 23.0364 18.5551L0.147809 66.1615C-0.299393 67.1003 0.31043 68 1.40811 68H7.79091C8.96989 68 9.62036 67.2959 9.90495 66.5918L24.3374 35.5322H24.5407L39.0951 66.5918C39.6236 67.5697 40.1114 68 41.2091 68H47.5919C48.6896 68 49.2994 67.0612 48.8522 66.1615L26.2888 18.5551Z"
+                  d="M11.223.865a.41.41 0 0 1 .076.229c0 .101-.026.152-.076.203L5.916 6.629a.41.41 0 0 1-.229.076c-.101 0-.152-.025-.203-.076L.152 1.297c-.05-.05-.076-.102-.076-.203A.41.41 0 0 1 .152.865L.66.357C.71.307.762.281.863.281a.41.41 0 0 1 .229.076l4.595 4.596L10.284.357c.051-.05.127-.076.229-.076.076 0 .152.026.203.076l.508.508z"
                   fill="currentColor"
                 />
               </svg>
-            </div>
-            <picture class="about__picture">
-              <source
-                media="(min-width: 1770px)"
-                srcset="./assets/images/about/about-1920.webp"
-              />
-              <source
-                media="(min-width: 1281px)"
-                srcset="./assets/images/about/about-1440.webp"
-              />
-              <source
-                media="(min-width: 768px)"
-                srcset="./assets/images/about/about-1024.webp"
-              />
-              <source
-                media="(min-width: 360px)"
-                srcset="./assets/images/about/about-768.webp"
-              />
-              <img
-                src="./assets/images/about/about-360.webp"
-                alt="О проекте"
-                class="about__img"
-                loading="lazy"
-              />
-            </picture>
+            </button>
           </div>
-        </div>
-        <div class="about__right">
-          <p class="about__title">
-            Уютное и безопасное пространство для счастливой,
-            <br />
-            <span class="text--primary">Спокойной и размеренной жизни</span>
-          </p>
-          <p class="about__description">
-            <span class="text--primary">
-              Квартиры от 65 до 356 м <sup>2</sup> с чистовой отделкой</span
-            >, балконами, лоджиями и террасами В собственной закрытой охраняемой
-            территории.
-          </p>
-          <div class="about__video">
-            <div class="video__info">
-              <p class="video__label">Видео о проекте</p>
-              <p class="video__time">1:25 минут</p>
-            </div>
-            <div class="video__line"></div>
+          <div class="header__logo">
+            <a class="header__logo-link" href="#">
+              <svg
+                class="header__logo-icon"
+                width="187"
+                height="30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#a)">
+                  <mask id="b" x="0" y="0" width="187" height="30">
+                    <path d="M187 0H0v30h187V0z" fill="#fff" />
+                  </mask>
+                  <g mask="url(#b)" fill="currentColor">
+                    <path
+                      d="M119.405 0c.315 0 .595.294.595.624v2.752c0 .33-.28.624-.595.624h-19.81C99.28 4 99 3.706 99 3.376V.624c0-.33.28-.624.596-.624h19.809zM59.897 24.255a.568.568 0 0 0-.774 0c-1.308 1.03-2.89 1.74-4.767 1.74-3.992 0-6.968-3.244-6.968-7.063 0-3.852 2.96-7.113 6.934-7.113 1.738 0 3.493.676 4.8 1.808.242.236.569.236.775 0L61.79 11.7c.24-.236.24-.608-.035-.861C59.64 8.98 57.368 8 54.22 8 48.007 8 43 12.917 43 19.034 43 25.134 48.007 30 54.236 30c2.77 0 5.455-.946 7.571-2.957.224-.22.275-.608.035-.828l-1.945-1.96zM90.39 8h-2.975a.595.595 0 0 0-.61.591v8.33H76.23v-8.33A.595.595 0 0 0 75.62 8h-3.01c-.323 0-.61.278-.61.591V29.41c0 .313.287.591.61.591h3.01c.36 0 .61-.278.61-.591V20.73h10.576v8.679c0 .313.25.591.61.591h2.975c.322 0 .609-.278.609-.591V8.59c0-.313-.287-.591-.61-.591zM110.267 8.343c-.087-.189-.227-.343-.54-.343h-.314c-.279 0-.436.154-.54.343l-9.81 20.852c-.191.41.07.805.54.805h2.736c.505 0 .784-.308.906-.617l6.185-13.604h.087l6.238 13.604c.227.428.436.617.906.617h2.736c.47 0 .731-.411.54-.805l-9.67-20.852zM135.978 8h-7.387a.586.586 0 0 0-.591.591V29.41c0 .313.243.591.591.591h2.885a.61.61 0 0 0 .591-.591v-7.392h3.928c3.842 0 7.005-3.182 7.005-7.078.017-3.791-3.163-6.939-7.022-6.939zm-.261 10.191h-3.65v-6.33h3.65c1.756 0 3.233 1.322 3.233 3.043 0 1.861-1.477 3.287-3.233 3.287zM155.423 8h-2.847c-.305 0-.576.278-.576.591V29.41c0 .313.271.591.576.591h2.847c.305 0 .576-.278.576-.591V8.59c.017-.313-.271-.591-.576-.591zM186.36 8h-2.95a.59.59 0 0 0-.605.586v12.868h-.035l-10.575-10.887-2.098-2.17a1.337 1.337 0 0 0-.959-.397h-.534a.59.59 0 0 0-.604.586v20.62a.59.59 0 0 0 .604.586h2.933a.59.59 0 0 0 .604-.586V15.821h.036l.035.034 12.904 13.73s.391.414.746.414c.516 0 1.138.052 1.138-.569V8.586a.647.647 0 0 0-.64-.586zM3.423 8H.576C.271 8 0 8.278 0 8.591V29.41c0 .313.271.591.576.591h2.847c.305 0 .576-.278.576-.591V8.59C4.016 8.278 3.728 8 3.423 8zM34.36 8h-2.95a.59.59 0 0 0-.605.586v12.868h-.035L20.195 10.567l-2.098-2.17A1.337 1.337 0 0 0 17.138 8h-.534a.59.59 0 0 0-.604.586v20.62a.59.59 0 0 0 .604.586h2.933a.59.59 0 0 0 .604-.586V15.821h.036l.035.034 12.904 13.73s.391.414.746.414c.516 0 1.138.052 1.138-.569V8.586A.647.647 0 0 0 34.36 8z"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </div>
+          <div class="header__right">
+            <a href="tel:+74955272121" class="phone-link">+7 495 527 21 21</a>
             <button
-              class="video__button"
-              data-fullscreen-video-url="https://api.5-ve.ru/upload/video/Mantera_promo_768.mp4"
+              class="callback-button auto-scroll-text-trigger"
+              data-popup-id="callback-popup"
             >
-              <span class="play play--white video__play">
-                <svg
-                  class="play__icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="9"
-                  height="10"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M8.407 4.124a1 1 0 0 1 0 1.752L1.482 9.685A1 1 0 0 1 0 8.809V1.19A1 1 0 0 1 1.482.315l6.925 3.809Z"
-                  />
-                </svg>
-                Play
+              <span class="auto-scroll-text-container">
+                <span class="auto-scroll-text">Заказать звонок</span>
               </span>
-              <img
-                src="./assets/images/video-cover.webp"
-                alt="Видео о проекте"
-                class="video__cover"
-              />
             </button>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- endregion -->
+      </header>
+      <!-- endregion -->
 
-    <div id="video-modal" class="video-modal">
-      <button id="video-modal-close" class="video-modal__close">×</button>
-      <video id="fullscreen-video" controls></video>
+      <!-- region Banner -->
+      <section class="banner">
+        <div class="container">
+          <picture class="banner__picture">
+            <source
+              media="(min-width: 1770px)"
+              srcset="./assets/images/banner/banner-1920.webp"
+            />
+            <source
+              media="(min-width: 1281px)"
+              srcset="./assets/images/banner/banner-1440.webp"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="./assets/images/banner/banner-1024.webp"
+            />
+            <source
+              media="(min-width: 360px)"
+              srcset="./assets/images/banner/banner-768.webp"
+            />
+            <img
+              src="./assets/images/banner/banner-360.webp"
+              alt="Дом бизнес класса"
+              class="banner__img"
+            />
+          </picture>
+          <div class="banner__row">
+            <h3 class="banner__title">
+              Дом бизнес-класса
+              <br />
+              Для ценителей роскоши
+            </h3>
+            <img
+              class="banner__logo"
+              src="./assets/images/logo-black.svg"
+              alt="Inchapin"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- endregion -->
+
+      <!-- region About -->
+      <section class="about">
+        <div class="container">
+          <div class="about__left">
+            <p class="about__label">О проекте</p>
+            <div class="about__picture-wrapper">
+              <div class="about__picture-plug">
+                <svg
+                  class="about__picture-icon"
+                  width="49"
+                  height="68"
+                  viewBox="0 0 49 68"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M47.6105 0C48.3461 0 49 0.623853 49 1.32569V7.17431C49 7.87615 48.3461 8.5 47.6105 8.5H1.38949C0.653876 8.5 0 7.87615 0 7.17431V1.32569C0 0.623853 0.653876 0 1.38949 0H47.6105Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M26.2888 18.5551C26.0855 18.1248 25.7603 17.7727 25.0285 17.7727H24.2967C23.6463 17.7727 23.2804 18.1248 23.0364 18.5551L0.147809 66.1615C-0.299393 67.1003 0.31043 68 1.40811 68H7.79091C8.96989 68 9.62036 67.2959 9.90495 66.5918L24.3374 35.5322H24.5407L39.0951 66.5918C39.6236 67.5697 40.1114 68 41.2091 68H47.5919C48.6896 68 49.2994 67.0612 48.8522 66.1615L26.2888 18.5551Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              <picture class="about__picture">
+                <source
+                  media="(min-width: 1770px)"
+                  srcset="./assets/images/about/about-1920.webp"
+                />
+                <source
+                  media="(min-width: 1281px)"
+                  srcset="./assets/images/about/about-1440.webp"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./assets/images/about/about-1024.webp"
+                />
+                <source
+                  media="(min-width: 360px)"
+                  srcset="./assets/images/about/about-768.webp"
+                />
+                <img
+                  src="./assets/images/about/about-360.webp"
+                  alt="О проекте"
+                  class="about__img"
+                />
+              </picture>
+            </div>
+          </div>
+          <div class="about__right">
+            <p class="about__title">
+              Уютное и безопасное пространство для счастливой,
+              <br />
+              <span class="text--primary">Спокойной и размеренной жизни</span>
+            </p>
+            <p class="about__description">
+              <span class="text--primary">
+                Квартиры от 65 до 356 м <sup>2</sup> с чистовой отделкой</span
+              >, балконами, лоджиями и террасами В собственной закрытой
+              охраняемой территории.
+            </p>
+            <div class="about__video">
+              <div class="video__info">
+                <p class="video__label">Видео о проекте</p>
+                <p class="video__time">1:25 минут</p>
+              </div>
+              <div class="video__line"></div>
+              <button
+                class="video__button"
+                data-fullscreen-video-url="https://api.5-ve.ru/upload/video/Mantera_promo_768.mp4"
+              >
+                <span class="play play--white video__play">
+                  <svg
+                    class="play__icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="9"
+                    height="10"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M8.407 4.124a1 1 0 0 1 0 1.752L1.482 9.685A1 1 0 0 1 0 8.809V1.19A1 1 0 0 1 1.482.315l6.925 3.809Z"
+                    />
+                  </svg>
+                  Play
+                </span>
+                <img
+                  src="./assets/images/video-cover.webp"
+                  alt="Видео о проекте"
+                  class="video__cover"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- endregion -->
+
+      <!-- region Modals -->
+      <div id="callback-popup" class="popup">
+        <button class="close popup__close" data-close-popup="callback-popup">
+          <span class="close__line"></span>
+          <span class="close__line"></span>
+        </button>
+        <form id="callback-form" class="callback__form">
+          <p class="callback__title">Заказать звонок</p>
+          <div class="callback__fields">
+            <div class="input__wrapper">
+              <input
+                id="callback-name"
+                class="input"
+                type="text"
+                name="name"
+                placeholder="Ваше имя"
+                autocomplete="one"
+                data-name-mask
+              />
+              <label class="input__label" for="callback-name">Ваше имя</label>
+            </div>
+            <div class="input__wrapper">
+              <input
+                id="callback-phone"
+                class="input"
+                type="text"
+                name="number"
+                placeholder="Телефон"
+                autocomplete
+                data-phone-mask
+              />
+              <label class="input__label" for="callback-phone">Телефон</label>
+            </div>
+            <div class="input__wrapper">
+              <input
+                id="callback-email"
+                class="input"
+                type="text"
+                name="e-mail"
+                placeholder="E-mail"
+                autocomplete
+                data-email-mask
+              />
+              <label class="input__label" for="callback-email">E-mail</label>
+            </div>
+          </div>
+          <p class="callback__policy">
+            Нажимая на кнопку «Отправить», вы ознакомлены и подтверждаете
+            согласие с
+            <a class="callback__policy-link" href="#" target="_blank">
+              политикой обработки персональных данных
+            </a>
+          </p>
+          <input
+            class="button callback__submit"
+            type="submit"
+            value="Отправить"
+          />
+        </form>
+      </div>
+
+      <div id="video-modal" class="video-modal">
+        <button id="video-modal-close" class="video-modal__close">×</button>
+        <video id="fullscreen-video" controls></video>
+      </div>
+      <!-- endregion -->
     </div>
 
+    <!-- Smooth scroll bar -->
+    <script src="https://unpkg.com/smooth-scrollbar@8.8.4/dist/smooth-scrollbar.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollContent = document.getElementById('scroll-content');
+        const scrollbar = Scrollbar.init(scrollContent, {
+          damping: 0.1,
+          thumbMinSize: 20,
+          renderByPixels: true,
+          alwaysShowTracks: false,
+          continuousScrolling: true,
+          syncCallbacks: true,
+        });
+
+        const header = document.getElementById('header');
+        if (header) {
+          scrollbar.addListener(({ offset }) => {
+            header.style.transform = `translate(${offset.x}px, ${offset.y}px)`;
+          });
+        }
+      });
+    </script>
+
+    <!-- Main script -->
     <script src="./assets/scripts/index.js"></script>
   </body>
 </html>
