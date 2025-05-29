@@ -702,6 +702,10 @@ body {
 
   /* region Header */
 
+  .header {
+    padding: 40px 0;
+  }
+
   .header__left,
   .header__right {
     gap: 45px;
@@ -710,6 +714,10 @@ body {
   /* endregion */
 
   /* region Banner */
+
+  .banner {
+    padding-top: 131px;
+  }
 
   .banner__img {
     aspect-ratio: 2.9;
@@ -766,6 +774,134 @@ body {
   .about__description {
     font-size: 20px;
     margin-bottom: 100px;
+  }
+
+  .about__video {
+    gap: 20px;
+  }
+
+  /* endregion */
+}
+
+@media (max-width: 1280px) {
+  /* region UI */
+
+  .menu-btn {
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .video__label {
+    font-size: 10px;
+  }
+
+  .video__time {
+    font-size: 13px;
+  }
+
+  .video__button {
+    width: 133px;
+    min-width: 133px;
+    height: 133px;
+  }
+
+  .play {
+    font-size: 10px;
+  }
+
+  .play__icon {
+    width: 7px;
+  }
+
+  /* endregion */
+
+  /* region Header */
+
+  .header__left {
+    gap: 25px;
+  }
+
+  .header__right {
+    gap: 35px;
+  }
+
+  .header__logo-icon {
+    width: 155px;
+  }
+
+  .phone-link {
+    font-size: 13px;
+  }
+
+  .callback-button {
+    font-size: 12px;
+  }
+
+  /* endregion */
+
+  /* region Banner */
+
+  .banner__img {
+    aspect-ratio: 2.35;
+  }
+
+  .banner__row {
+    margin-top: 30px;
+  }
+
+  .banner__title {
+    font-size: 19px;
+  }
+
+  .banner__logo {
+    width: 554px;
+  }
+
+  /* endregion */
+
+  /* region About */
+
+  .about {
+    margin-top: 60px;
+  }
+
+  .about__right {
+    margin-right: 8%;
+    width: 36%;
+  }
+
+  .about__label {
+    font-size: 11px;
+    margin-bottom: 20px;
+  }
+
+  .about__picture-plug {
+    width: 148px;
+    height: 148px;
+    top: 61px;
+  }
+
+  .about__picture-icon {
+    width: 35px;
+  }
+
+  .about__right:before {
+    width: 35px;
+    height: 6px;
+    border-radius: 1px;
+    top: -41px;
+  }
+
+  .about__title {
+    font-size: 19px;
+    margin-bottom: 65px;
+    line-height: 1.4;
+  }
+
+  .about__description {
+    font-size: 12px;
+    margin-bottom: 60px;
+    line-height: 1.8;
   }
 
   .about__video {
