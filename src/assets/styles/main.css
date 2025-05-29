@@ -448,6 +448,34 @@ body {
   font-size: 13px;
   font-weight: 600;
 }
+
+.header__phone--mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  border: 1px solid #d7d7d7;
+  transition: 0.3s;
+}
+
+.header__phone--mobile-icon {
+  width: 14px;
+  height: auto;
+  transition: 0.3s;
+  color: #000000;
+}
+
+.header__phone--mobile:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.header__phone--mobile:hover .header__phone--mobile-icon {
+  color: var(--on-accent-color);
+}
+
 /* endregion */
 
 /* region Banner */
@@ -813,6 +841,10 @@ body {
     width: 7px;
   }
 
+  .container {
+    padding: 0 30px;
+  }
+
   /* endregion */
 
   /* region Header */
@@ -843,6 +875,7 @@ body {
 
   .banner__img {
     aspect-ratio: 2.35;
+    object-position: center;
   }
 
   .banner__row {
@@ -906,6 +939,141 @@ body {
 
   .about__video {
     gap: 20px;
+  }
+
+  /* endregion */
+}
+
+@media (min-width: 1024px) {
+  /* region Header */
+
+  .header__phone--mobile {
+    display: none;
+  }
+
+  /* endregion */
+}
+
+@media (max-width: 1023px) {
+  /* region UI */
+
+  .container {
+    padding: 0 40px;
+  }
+
+  .button {
+    font-size: 12px;
+    padding: 15px 18px;
+  }
+
+  /* endregion */
+
+  /* region Header */
+
+  .header {
+    padding: 37px 0;
+  }
+
+  .header .header__left {
+    gap: 68px;
+  }
+
+  .header__phone {
+    display: none;
+  }
+
+  .header__callback {
+    display: none;
+  }
+
+  .header__button {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+  }
+
+  /* endregion */
+
+  /* region Banner */
+
+  .banner {
+    padding-top: 116px;
+  }
+
+  .banner__img {
+    aspect-ratio: 1.4;
+  }
+
+  .banner__row {
+    margin-top: 43px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 43px;
+  }
+
+  .banner__title {
+    line-height: 1.4;
+    font-size: 26px;
+  }
+
+  .banner__logo {
+    width: 100%;
+  }
+
+  /* endregion */
+
+  /* region About */
+
+  .about {
+    margin-top: 90px;
+    margin-bottom: 30px;
+  }
+
+  .about .container {
+    padding-left: 0;
+    padding-right: 50px;
+  }
+
+  .about__left {
+    width: 40%;
+  }
+
+  .about__right {
+    margin-right: 0;
+    width: 48%;
+    margin-left: 12%;
+  }
+
+  .about__label {
+    font-size: 11px;
+    margin-bottom: 20px;
+  }
+
+  .about__img {
+    aspect-ratio: 0.7;
+  }
+
+  .about__picture-plug {
+    width: 81px;
+    height: 81px;
+    top: 59px;
+  }
+
+  .about__picture-icon {
+    width: 19px;
+  }
+
+  .about__right:before {
+    top: -36px;
+  }
+
+  .about__title {
+    margin-bottom: 20px;
+  }
+
+  .about__description {
+    margin-bottom: 30px;
   }
 
   /* endregion */
