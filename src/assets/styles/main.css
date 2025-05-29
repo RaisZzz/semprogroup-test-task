@@ -364,9 +364,14 @@ body {
   background: none;
   border: none;
   color: white;
-  font-size: 30px;
+  font-size: 40px;
   cursor: pointer;
   z-index: 3;
+  transition: 0.3s;
+}
+
+.video-modal__close:hover {
+  opacity: 0.5;
 }
 
 /* endregion */
