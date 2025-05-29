@@ -636,6 +636,7 @@ body {
   font-size: 40px;
   text-transform: uppercase;
   margin-bottom: 50px;
+  text-align: center;
 }
 
 .callback__fields {
@@ -726,6 +727,11 @@ body {
     width: 13px;
   }
 
+  .input,
+  .input__label {
+    font-size: 17px;
+  }
+
   /* endregion */
 
   /* region Header */
@@ -809,6 +815,31 @@ body {
   }
 
   /* endregion */
+
+  /* region Callback Form */
+
+  .callback__form {
+    max-width: 587px;
+  }
+
+  .callback__title {
+    font-size: 52px;
+    margin-bottom: 80px;
+  }
+
+  .callback__fields {
+    gap: 50px;
+  }
+
+  .callback__policy {
+    font-size: 14px;
+  }
+
+  .callback__submit {
+    padding: 24px;
+  }
+
+  /* endregion */
 }
 
 @media (max-width: 1280px) {
@@ -843,6 +874,20 @@ body {
 
   .container {
     padding: 0 30px;
+  }
+
+  .popup {
+    padding: 50px;
+  }
+
+  .input,
+  .input__label {
+    font-size: 14px;
+  }
+
+  .popup__close {
+    top: 50px;
+    right: 50px;
   }
 
   /* endregion */
@@ -942,6 +987,32 @@ body {
   }
 
   /* endregion */
+
+  /* region Callback Form */
+
+  .callback__form {
+    max-width: 370px;
+  }
+
+  .callback__title {
+    font-size: 28px;
+  }
+
+  .callback__fields {
+    gap: 45px;
+  }
+
+  .callback__policy {
+    font-size: 11px;
+  }
+
+  .callback__submit {
+    width: 170px;
+    font-size: 14px;
+    padding: 20px;
+  }
+
+  /* endregion */
 }
 
 @media (min-width: 1024px) {
@@ -964,6 +1035,15 @@ body {
   .button {
     font-size: 12px;
     padding: 15px 18px;
+  }
+
+  .popup {
+    padding: 40px;
+  }
+
+  .popup__close {
+    top: 40px;
+    right: 40px;
   }
 
   /* endregion */
@@ -1077,6 +1157,23 @@ body {
   }
 
   /* endregion */
+
+  /* region Callback Form */
+
+  .callback__form {
+    max-width: 438px;
+  }
+
+  .callback__title {
+    font-size: 28px;
+  }
+
+  .callback__submit {
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  /* endregion */
 }
 
 @media (max-width: 767px) {
@@ -1092,6 +1189,15 @@ body {
 
   .container {
     padding: 0 20px;
+  }
+
+  .popup {
+    padding: 20px;
+  }
+
+  .popup__close {
+    top: 20px;
+    right: 20px;
   }
 
   /* endregion */
@@ -1181,6 +1287,42 @@ body {
   .about__description {
     font-size: 11px;
     margin-bottom: 20px;
+  }
+
+  /* endregion */
+
+  /* region Callback Form */
+
+  .callback__form {
+    max-width: 100%;
+  }
+
+  .callback__title {
+    font-size: 20px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .callback__fields {
+    gap: 41px;
+  }
+
+  .input,
+  .input__label {
+    font-size: 11px;
+  }
+
+  .callback__policy {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+
+  .callback__submit {
+    font-size: 11px;
+    padding: 18px;
   }
 
   /* endregion */
